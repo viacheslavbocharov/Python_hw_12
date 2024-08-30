@@ -1,34 +1,26 @@
 import time
-class Item:
 
+
+class Item:
     def __init__(self, name, price, description, dimensions):
         self.name = name
         self.price = price
         self.description = description
         self.dimensions = dimensions
 
-
     def __str__(self):
-        return(f'Item information:\n'
-              f'\tname: {self.name}\n'
-              f'\tprice: {self.price}\n'
-              f'\tdescription: {self.description}\n'
-              f'\tdimensions: {self.dimensions}\n'
-              f'___________________________________\n')
+        return f'{self.name}, price: {self.price}'
+
 
 class User:
-
     def __init__(self, name, surname, numberphone):
         self.name = name
         self.surname = surname
         self.numberphone = numberphone
 
     def __str__(self):
-        return(f'User information:\n'
-              f'\tname: {self.name}\n'
-              f'\tsurname: {self.surname}\n'
-              f'\tphonenumber: {self.numberphone}\n'
-              f'___________________________________\n')
+        return f'{self.name} {self.surname}'
+
 
 class Purchase:
     @staticmethod
@@ -40,33 +32,35 @@ class Purchase:
     def __init__(self, user):
         self.purchase_id = Purchase.generate_id()
         self.products = {}
-        self.name = user.name
-        self.surname = user.surname
+        self.user = user
         self.total = 0
 
     def add_item(self, item, qnt):
-        self.products[item.name] = qnt
+        if item in self.products:
+            self.products[item] += qnt
+        else:
+            self.products[item] = qnt
         self.total += item.price * qnt
 
     def del_item(self, item, qnt):
-        if item.name in self.products:
-            if self.products[item.name] >= qnt:
-                self.products[item.name] -= qnt
+        if item in self.products:
+            if self.products[item] >= qnt:
+                self.products[item] -= qnt
                 self.total -= item.price * qnt
-                if self.products[item.name] <= 0:
-                    del self.products[item.name]
+                if self.products[item] <= 0:
+                    del self.products[item]
 
     def __str__(self):
-        items_str = "\n".join(f'{name}: {qnt} pcs.' for name, qnt in self.products.items())
-        return(f'Cart information:\n\n'
-               f'User: {self.name} {self.surname}\n'
-               f'Items:\n'
-               f'{items_str}\n'
-               f'___________________________________\n'
-               )
+        items_str = "\n".join(f'{item.name}: {qnt} pcs.' for item, qnt in self.products.items())
+        return (f'"""\n'
+                f'User: {self.user.name} {self.user.surname}\n'
+                f'Items:\n'
+                f'{items_str}\n'
+                f'"""')
 
     def get_total(self):
         return self.total
+
 
 
 lemon = Item('lemon', 5, "yellow", "small", )
