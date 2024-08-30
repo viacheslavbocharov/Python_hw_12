@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5136bc40-9f8e-47c2-b598-4b86b57f6743" name="Changes" comment="">
+    <list default="true" id="5136bc40-9f8e-47c2-b598-4b86b57f6743" name="Changes" comment="1) fix item and User display,&#10;2) fix class Purchase(now object transferring into method), &#10;3) fix code according to per-8">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/12.2.py" beforeDir="false" afterPath="$PROJECT_DIR$/12.2.py" afterDir="false" />
     </list>
@@ -97,6 +97,19 @@
       <option name="presentableId" value="Default" />
       <updated>1724859319680</updated>
     </task>
+    <task id="LOCAL-00001" summary="1) fix item and User display,&#10;2) fix class Purchase(now object transferring into method), &#10;3) fix code according to per-8">
+      <option name="closed" value="true" />
+      <created>1725017204574</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725017204574</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1) fix item and User display,&#10;2) fix class Purchase(now object transferring into method), &#10;3) fix code according to per-8" />
+    <option name="LAST_COMMIT_MESSAGE" value="1) fix item and User display,&#10;2) fix class Purchase(now object transferring into method), &#10;3) fix code according to per-8" />
   </component>
 </project>
